@@ -9,11 +9,11 @@ terraform {
 
   required_providers {
     azurerm = {
-      version = "2.72.0"
+      version = "2.74.0"
       source  = "hashicorp/azurerm"
     }
     azuread = {
-      version = "1.6.0"
+      version = "2.0.1"
       source  = "hashicorp/azuread"
     }
     random = {
@@ -30,7 +30,7 @@ terraform {
     }
     flux = {
       source  = "fluxcd/flux"
-      version = "0.2.2"
+      version = "0.3.0"
     }
     kubectl = {
       source  = "gavinbunney/kubectl"
@@ -38,7 +38,7 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = "2.2.0"
+      version = "2.3.0"
     }
   }
 }

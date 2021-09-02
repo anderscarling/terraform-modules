@@ -14,7 +14,7 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = "2.2.0"
+      version = "2.3.0"
     }
   }
 }
@@ -38,7 +38,7 @@ resource "helm_release" "cert_manager" {
   chart      = "cert-manager"
   name       = "cert-manager"
   namespace  = kubernetes_namespace.this.metadata[0].name
-  version    = "v1.5.1"
+  version    = "v1.5.3"
   values = [templatefile("${path.module}/templates/values.yaml.tpl", {
     provider   = var.cloud_provider,
     aws_config = var.aws_config,

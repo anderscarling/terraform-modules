@@ -15,7 +15,7 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = "2.2.0"
+      version = "2.3.0"
     }
   }
 }
@@ -39,7 +39,7 @@ resource "helm_release" "prometheus" {
   chart      = "kube-prometheus-stack"
   name       = "prometheus"
   namespace  = kubernetes_namespace.this.metadata[0].name
-  version    = "17.2.2"
+  version    = "18.0.2"
   values = [templatefile("${path.module}/templates/values.yaml.tpl", {
     cloud_provider = var.cloud_provider
   })]
@@ -56,7 +56,7 @@ resource "helm_release" "metrics_server" {
   chart      = "metrics-server"
   name       = "metrics-server"
   namespace  = "kube-system"
-  version    = "5.9.2"
+  version    = "5.9.3"
   values     = [templatefile("${path.module}/templates/values-metrics-server.yaml.tpl", {})]
 }
 
